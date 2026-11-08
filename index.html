@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Vaishali ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&family=Cormorant+Garamond:wght@500;600;700&family=Pacifico&family=Sacramento&family=Quicksand:wght@400;600&family=Parisienne&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#ffe1ec,#f7d8f5,#fff0df);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #783b58;
+}
+
+.presentation {
+    width: 90%;
+    max-width: 850px;
+    height: 580px;
+    position: relative;
+    background: rgba(255,255,255,.65);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,255,255,.8);
+    border-radius: 30px;
+    box-shadow: 0 20px 60px #bd729b50;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    padding: 45px 65px 95px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(50px) scale(.96);
+    transition: .8s ease;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0) scale(1);
+}
+
+.slide h1 {
+    font-size: clamp(30px,5vw,48px);
+    margin-bottom: 25px;
+    line-height: 1.35;
+}
+
+.slide p {
+    font-size: 18px;
+    line-height: 1.9;
+    max-width: 650px;
+}
+
+.emoji {
+    font-size: 65px;
+    margin-bottom: 25px;
+    animation: bounce 2s infinite;
+}
+
+.controls {
+    position: absolute;
+    bottom: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+button {
+    border: none;
+    padding: 13px 27px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(45deg,#d85b91,#a64b9b);
+    box-shadow: 0 5px 18px #b34e8b50;
+    transition: .3s;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 8px 25px #bd579b80;
+}
+
+button:active {
+    transform: scale(.9);
+}
+
+#counter {
+    font-family: 'Poppins';
+    font-size: 13px;
+    color: #a14c7c;
+}
+
+/* Different fonts for each slide */
+
+.s1 { font-family:'Great Vibes',cursive; }
+.s2 { font-family:'Playfair Display',serif; }
+.s3 { font-family:'Dancing Script',cursive; }
+.s4 { font-family:'Cormorant Garamond',serif; }
+.s5 { font-family:'Pacifico',cursive; }
+.s6 { font-family:'Quicksand',sans-serif; }
+.s7 { font-family:'Parisienne',cursive; }
+.s8 { font-family:'Sacramento',cursive; }
+.s9 { font-family:'Playfair Display',serif; }
+.s10 { font-family:'Dancing Script',cursive; }
+
+.s1 {
+    background: linear-gradient(140deg,#ffe3ed,#fff0f5,#f7dcff);
+}
+
+.s2 { background: linear-gradient(140deg,#fff0f5,#ffe2e8); }
+.s3 { background: linear-gradient(140deg,#fce4ff,#ffeaf1); }
+.s4 { background: linear-gradient(140deg,#fff0e8,#ffe0ed); }
+.s5 { background: linear-gradient(140deg,#ffe5ed,#f5ddff); }
+.s6 { background: linear-gradient(140deg,#fce6ef,#fff0db); }
+.s7 { background: linear-gradient(140deg,#fff0f5,#e9e1ff); }
+.s8 { background: linear-gradient(140deg,#fce3f0,#ffe9e5); }
+.s9 { background: linear-gradient(140deg,#ffe4ef,#f6dfff); }
+.s10 { background: linear-gradient(140deg,#fff0e8,#f9dbea); }
+
+.s1 h1 {
+    font-size: clamp(42px,7vw,75px);
+    animation: zoomIn 1.5s ease;
+}
+
+.s1 p {
+    font-size: 21px;
+    font-family: 'Poppins';
+    animation: fadeUp 2s ease;
+}
+
+.s2 h1,.s3 h1,.s4 h1,.s5 h1,
+.s6 h1,.s7 h1,.s8 h1 {
+    animation: fadeUp 1s ease;
+}
+
+.s9 h1 {
+    font-size: 38px;
+}
+
+.s9 p {
+    font-family: 'Poppins';
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.s10 h1 {
+    font-size: 43px;
+}
+
+.s10 p {
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes fadeUp {
+    from { opacity:0; transform:translateY(40px); }
+    to { opacity:1; transform:translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity:0; transform:scale(.5); }
+    to { opacity:1; transform:scale(1); }
+}
+
+@keyframes float {
+    0% { transform:translateY(110vh) rotate(0); opacity:0; }
+    20% { opacity:1; }
+    100% { transform:translateY(-15vh) rotate(360deg); opacity:0; }
+}
+
+.particle {
+    position: fixed;
+    bottom: -30px;
+    pointer-events: none;
+    animation: float linear infinite;
+    z-index: 20;
+}
+
+@media(max-width:600px) {
+    .presentation {
+        width:94%;
+        height: min(680px,85vh);
+    }
+
+    .slide {
+        padding: 30px 22px 95px;
+    }
+
+    .slide p {
+        font-size: 15px;
+    }
+
+    .s9 p {
+        font-size: 12px;
+    }
+
+    .s9 h1 {
+        font-size: 28px;
+    }
+
+    .s10 p {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 11px 19px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="presentation">
+
+<!-- SLIDE 1 -->
+<section class="slide s1 active">
+    <div class="emoji">🎂💗🎀</div>
+    <h1>Wishing You the Very Happiest Birthday Ever, Vaishali Rawat! ❤️</h1>
+    <p>May your special day be as beautiful and wonderful as you are! 🌷✨</p>
+    <div class="emoji">🦋🌸</div>
+</section>
+
+<!-- SLIDE 2 -->
+<section class="slide s2">
+    <div class="emoji">🎂❤️</div>
+    <h1>1. A Special Day for a Truly Special Soul</h1>
+    <p>Wishing you a day filled with happiness, laughter and countless beautiful moments. You truly deserve all the good things life has to offer. Keep shining and smiling always! 🌷</p>
+</section>
+
+<!-- SLIDE 3 -->
+<section class="slide s3">
+    <div class="emoji">🌷✨</div>
+    <h1>2. Happy Birthday to My Favourite Senior</h1>
+    <p>You are one of those people who make memories worth remembering. I'm genuinely glad that I got the opportunity to know you and share some beautiful moments with you. Stay blessed! 🫶🏻</p>
+</section>
+
+<!-- SLIDE 4 -->
+<section class="slide s4">
+    <div class="emoji">🦋💗</div>
+    <h1>3. Celebrating Someone Who Made Beautiful Memories</h1>
+    <p>Some moments become special simply because of the people we share them with. Thank you for being a part of some wonderful memories. May your life always be filled with joy! 💫</p>
+</section>
+
+<!-- SLIDE 5 -->
+<section class="slide s5">
+    <div class="emoji">🫶🏻🌸</div>
+    <h1>4. A Beautiful Soul Deserves a Beautiful Day</h1>
+    <p>May this birthday bring you endless happiness, new opportunities and everything your heart wishes for. Never stop being the wonderful person you are. Stay happy and blessed! ❤️</p>
+</section>
+
+<!-- SLIDE 6 -->
+<section class="slide s6">
+    <div class="emoji">💫❤️</div>
+    <h1>5. To Someone Who Will Always Be a Part of My Memories</h1>
+    <p>Time may pass, and school days may become memories, but some people always hold a special place in our memories. You're definitely one of them. Wishing you the happiest birthday! 🦋</p>
+</section>
+
+<!-- SLIDE 7 -->
+<section class="slide s7">
+    <div class="emoji">🧿🌷</div>
+    <h1>6. Another Year of Your Beautiful Existence</h1>
+    <p>May this new chapter of your life bring you success, peace and countless reasons to smile. Keep growing, keep achieving and never lose your beautiful spirit. Happy Birthday! 🎀</p>
+</section>
+
+<!-- SLIDE 8 -->
+<section class="slide s8">
+    <div class="emoji">🦢🤍</div>
+    <h1>7. A Senior by Class, A Friend by Heart</h1>
+    <p>The best thing about some connections is that they go beyond classes, years and seniority. I'm grateful for all the good memories we've shared. Wishing you a wonderful birthday! 🫶🏻</p>
+</section>
+
+<!-- SLIDE 9 -->
+<section class="slide s9">
+    <div class="emoji">✨🫶🏻</div>
+    <h1>8. Some People Are Special, and You're One of Them</h1>
+    <p>Not everyone we meet becomes a memorable part of our journey, but some people leave behind beautiful memories without even realising it. You're one of those people. Stay blessed and keep smiling! ❤️</p>
+</section>
+
+<!-- SLIDE 10 -->
+<section class="slide s10">
+    <div class="emoji">💌🌷</div>
+    <h1>Happiest Birthday to One of My Favourite Seniors! 🎂❤️</h1>
+    <p>
+        Honestly, I'm really glad that I got the chance to know you.
+        The memories we've made and the little moments we've shared
+        will always be special to me. You're not just a senior I know,
+        but someone I genuinely respect and feel lucky to have met.
+        I hope you always get reasons to smile, people who value you,
+        and opportunities that take you closer to your dreams.
+        <br><br>
+        May this new chapter of your life bring you endless happiness,
+        success, peace, and beautiful surprises. Never doubt how
+        special you are, and never let that beautiful smile fade.
+        Stay the same wonderful person you are.
+        <br><br>
+        <strong>Enjoy your day to the fullest. You genuinely deserve the best! 🌸🦋✨</strong>
+    </p>
+</section>
+
+<!-- BUTTONS -->
+<div class="controls">
+    <button id="prev" onclick="changeSlide(-1)">❮ Previous</button>
+    <span id="counter">1 / 10</span>
+    <button id="next" onclick="changeSlide(1)">Next ❯</button>
+</div>
+
+</div>
+
+<script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const counter = document.getElementById('counter');
+const nextBtn = document.getElementById('next');
+const prevBtn = document.getElementById('prev');
+
+function showSlide(index) {
+    slides[currentSlide].classList.remove('active');
+
+    currentSlide = index;
+
+    slides[currentSlide].classList.add('active');
+
+    counter.textContent = `${currentSlide + 1} / ${slides.length}`;
+
+    prevBtn.style.visibility = currentSlide === 0 ? 'hidden' : 'visible';
+
+    nextBtn.textContent =
+        currentSlide === slides.length - 1
+        ? '❤️ Replay'
+        : 'Next ❯';
+}
+
+function changeSlide(direction) {
+    let next = currentSlide + direction;
+
+    if(next >= slides.length) {
+        next = 0;
+    }
+
+    if(next < 0) {
+        next = slides.length - 1;
+    }
+
+    showSlide(next);
+}
+
+prevBtn.style.visibility = 'hidden';
+
+// Keyboard navigation
+document.addEventListener('keydown', function(e) {
+    if(e.key === 'ArrowRight') changeSlide(1);
+    if(e.key === 'ArrowLeft') changeSlide(-1);
+});
+
+// Floating decorations
+const decorations = ['💗','🌸','🦋','✨','💕','🌷','🎀'];
+
+function createParticle() {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.innerHTML = decorations[
+        Math.floor(Math.random() * decorations.length)
+    ];
+
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.fontSize = (15 + Math.random() * 20) + 'px';
+    particle.style.animationDuration = (5 + Math.random() * 7) + 's';
+
+    document.body.appendChild(particle);
+
+    setTimeout(() => particle.remove(), 12000);
+}
+
+setInterval(createParticle, 450);
+</script>
+
+</body>
+</html>
